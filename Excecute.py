@@ -5,7 +5,7 @@ from PIL import Image
 import os
 import csv
 import pandas as pd
-from Model import neigh,dt,model
+
 
 image_path = 'testing'
 width = 128
@@ -98,8 +98,6 @@ def verticalSymmetryE():
 
         blackS = blackR/blackL
 
-
-
         if 0.85<=blackS<=1.25:
             verticalSymmetry = 1
         Dict2[counter]["verticalSymmetry"] = verticalSymmetry
@@ -184,7 +182,6 @@ horizontalSymmetryE()
 diagonalSymmetry14E()
 diagonalSymmetry23E()
 
-
 #print(Dict2)
 
 df2 = pd.DataFrame(Dict2)
@@ -192,6 +189,4 @@ df2.to_csv("features_exec.csv",)
 
 #df2.drop(['counter'], axis=1)
 
-model.predict(df2)
-dt.predict(df2)
-neigh.predict(df2)
+
