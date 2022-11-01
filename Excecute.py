@@ -5,7 +5,13 @@ from PIL import Image
 import os
 import csv
 import pandas as pd
-
+#from Symmetry import Dict
+import pandas as pd
+from sklearn import svm
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn import tree
 
 image_path = 'testing'
 width = 128
@@ -181,11 +187,16 @@ verticalSymmetryE()
 horizontalSymmetryE()
 diagonalSymmetry14E()
 diagonalSymmetry23E()
+print(Dict2)
+tocsv = pd.DataFrame.from_dict(Dict2)
+tocsv.to_csv('features_exec.csv', )
 
-#print(Dict2)
+#SVCexec()
 
-df2 = pd.DataFrame(Dict2)
-df2.to_csv("features_exec.csv",)
+
+
+
+
 
 #df2.drop(['counter'], axis=1)
 
